@@ -1,0 +1,89 @@
+:root {
+    --orange: #BA5809;
+    --gray: #C7C9C6;
+    --green: #9FA194;
+    --brown: #582719;
+    --black: #15100A;
+  }
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+h1{
+    text-align: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 90px;
+    color: #76232F;
+    margin-top: 50px;
+}
+
+.carousel-item{
+    height: 80%;
+}
+
+/* Propiedades navbar*/
+
+.navbar{
+    background-color: var(--black);
+}
+
+.navbar a{
+    color: #9FA194;
+}
+
+.alpaquita{
+    height: 35px;
+}
+
+/* slogan */
+
+.slogan{
+    margin: 60px;
+    text-align: center;
+}
+
+/* Acerca de nosotros: images, text, video, cards  */
+
+.textAbout{
+    margin: 350px;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mundoCafe{
+    border-radius: 50%;
+    height: 350px;
+    margin: 40px;
+}
+
+.videoIndex{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin: 20%;
+    margin-top: 50px;
+}
+
+.card-text{
+    text-align: justify;
+}
+
+.card-deck{
+    margin: 10%;
+    margin-top: -17%;
+}
+
+/* Footer */
+
+.imgFooter{
+    width: 150px;
+    height: 120px;
+}
