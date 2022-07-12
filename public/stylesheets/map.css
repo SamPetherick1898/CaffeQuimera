@@ -1,9 +1,39 @@
-#map{
-    width: 600px;
-    height: 500px;
+/* City map: Uruapan, Michoacan, Mexico */
+
+#map1{
+    width: 450px;
+    height: 350px;
 }
 
-.map-container{
+.map-container1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+/* City map: Berlin, Germany */
+
+#map2{
+    width: 450px;
+    height: 350px;
+}
+
+.map-container2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+/* City map: Tokio, Japan */
+
+#map3{
+    width: 450px;
+    height: 350px;
+}
+
+.map-container3{
     display: flex;
     justify-content: center;
     margin-bottom: 10%;
