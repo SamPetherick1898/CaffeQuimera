@@ -1,0 +1,94 @@
+
+<div class="container">
+<div class="form-order-drink">
+  <div class="card order-drink">
+  <div class="card-body">
+    <h5 class="card-title">Registra tu orden</h5>
+
+<!--POST, para que los datos vayan en el (body) del request-->
+<form action="/order" method="post">
+    <div class="row my-3">
+        <div class="col drink-card">
+            <h2>Bebida</h2>
+            <p>Precio:</p>
+        </div>
+
+        <div class="col select-cant">
+            <label for="customRange1" class="form-label">Cantidad</label>
+            <span class="input-group-text">Cantidad</span>
+            <input type="range" class="form-range" min="0" max="10" id="customRange2" name="cantidad" value="0">
+        </div>
+
+
+
+        <!-- cheboxes to choose types-->
+        <div class="col radios">
+            <h5>Tipo de leche:</h5>
+            <br>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                <span class="checkmark"></span>
+              <label class="form-check-label" for="flexRadioDefault">
+                Almendras
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                <span class="checkmark"></span>
+              <label class="form-check-label" for="flexRadioDefault">
+                Soya
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                <span class="checkmark"></span>
+              <label class="form-check-label" for="flexRadioDefault">
+                Avena
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
+                <span class="checkmark"></span>
+              <label class="form-check-label" for="flexRadioDefault">
+                Coco
+              </label>
+            </div>
+        </div>
+        <div class="col checkboxes">
+            <h5>Jarabe:</h5>
+            <br>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="agua" name="agua">
+                <label class="form-check-label" for="agua">
+                    Maple
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="alcohol" name="alcohol">
+                <label class="form-check-label" for="alcohol">
+                    Vainilla
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="azucar" name="azucar">
+                <label class="form-check-label" for="azucar">
+                    Amaretto
+                </label>
+            </div>
+            <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="cebada" name="cebada">
+                <label class="form-check-label" for="cebada">
+                    Crema Irlandesa
+                </label>
+            </div>
+        </div>
+        <!-- end of checkboxes-->
+    </div>
+
+        <button class="btn" type="submit">Enviar Orden</button>
+    </form>
+  </div>
+</div>
+</div>
+
+</div>

@@ -129,8 +129,8 @@ h5{
     color: white;
     font-weight: 600;
 }
-/*--------New drink form----------*/
-.form-newdrink{
+/*--------New product form----------*/
+.form-newproduct{
   width: 100vw;
   display: flex;
   justify-content: center;

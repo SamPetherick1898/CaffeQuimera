@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const DrinksSchema = new Schema({
+const PastriesSchema = new Schema({
     name: {
         type: String,
         trim: true,
@@ -24,12 +24,16 @@ const DrinksSchema = new Schema({
         required: true,
         minLength: 10
     },
+    quantity: {
+        type: Number,
+        min: 0
+    },
     type: {
         type: String,
-        enum: ["cafe", "frappe", "smoothie", "te"]
+        enum: ["pastel", "nieve"]
     }
 }, { timestamps: true })
 
 //Export to use in other files
 
-module.exports = mongoose.model("Drink", DrinksSchema)
+module.exports = mongoose.model("Pastry", PastriesSchema)

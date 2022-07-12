@@ -1,0 +1,49 @@
+
+<div class="form-newproduct">
+  <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Registrar Nuevo Producto</h5>
+
+<!--form with post action to send the data-->
+<form action="/new-product" method="post">
+    <div class="row my-3">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="Nombre" name="name" required>
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="url" name="url">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripcion" name="description" required></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col select-cant">
+            <div class="input-group mb-3 price-field">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" name="price" required>
+            <span class="input-group-text">.00</span>
+        </div>
+        
+        <select class="form-select mb-3" id="type" name="type" required>
+            <option>Tipo...</option>
+            <option value="cafe">Caliente</option>
+            <option value="frappe">Frappe</option>
+            <option value="smoothie">Smoothie</option>
+            <option value="te">Té</option>
+            <option value="pastel">Pastel</option>
+            <option value="nieve">Nieve</option>
+        </select>
+        </div>
+
+    </div>
+
+        <button class="btn" type="submit">Guardar</button>
+    </form>
+  </div>
+</div>
+</div>
