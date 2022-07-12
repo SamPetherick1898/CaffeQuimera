@@ -1,0 +1,21 @@
+<h1>Bebidas</h1>
+
+ <div class="drinks-container">
+    
+     {{#each drinks}}
+     <div class="col-3">
+            <div class="card" style="width: 20rem;">
+                    <img src={{url}} class="card-img-top max-img" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-title">{{name}}</h3>
+                        <p class="card-text">{{description}}</p>
+                        <span class="badge text-bg-warning">Precio: ${{price}}</span>
+
+                    </div>
+                    <a href="/drinks/{{_id}}" class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary"> Agregar a la orden</button>
+                    </a>
+            </div>
+        </div>
+     {{/each}}
+  </div>
