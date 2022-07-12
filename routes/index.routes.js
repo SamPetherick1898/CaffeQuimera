@@ -5,8 +5,8 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get("/acercade", (req, res, next) => {
-  res.render("acercade");
+router.get("/aboutUs", (req, res, next) => {
+  res.render("aboutUs");
 });
 
 module.exports = router;

@@ -47,19 +47,13 @@ h1{
     text-align: center;
 }
 
-/* Acerca de nosotros: images, text, video, cards  */
+/* About us: images, text, video, cards  */
 
 .textAbout{
     margin: 350px;
     text-align: justify;
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.mundoCafe{
-    border-radius: 50%;
-    height: 350px;
-    margin: 40px;
 }
 
 .videoIndex{
