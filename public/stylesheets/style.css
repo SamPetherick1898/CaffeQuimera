@@ -13,7 +13,6 @@
     text-decoration: none;
 }
 
-
 h1{
     text-align: center;
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -42,7 +41,13 @@ h5{
 .alpaquita{
     height: 35px;
 }
-
+.cart {
+    display:flex;
+    align-items: center;
+}
+.fa-cart-shopping{
+    color: white;
+}
 /* slogan */
 
 .slogan{
@@ -70,12 +75,12 @@ h5{
     justify-content: center;
 }
 
-.card{
+.texts{
     margin: 20%;
     margin-top: 50px;
 }
 
-.card-text{
+.text-history{
     text-align: justify;
 }
 
@@ -117,7 +122,7 @@ h5{
     border: 3px double;
 }
 /*--------Forms general-----------*/
-.card {
+.form-edge {
     border: 1px solid var(--black);
     border-radius: 20px;
     padding: 3rem;
