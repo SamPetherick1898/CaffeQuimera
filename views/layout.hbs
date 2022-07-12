@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{appTitle}}</title>
-    <link rel="icon" type="image/x-icon" href="https://img1.freepng.es/20180305/ehe/kisspng-coffee-latte-espresso-barley-tea-cafe-cartoon-love-coffee-5a9d9e37bbbbd6.613976361520279095769.jpg">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> <!--Link del nav bar bootstrap-->
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="https://img1.freepng.es/20180305/ehe/kisspng-coffee-latte-espresso-barley-tea-cafe-cartoon-love-coffee-5a9d9e37bbbbd6.613976361520279095769.jpg"> <!-- Icon img -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script> <!-- MAPBOX -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' /> <!-- MAPBOX -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/> <!-- Font Awesome -->
+    <link rel="stylesheet" href="/stylesheets/style.css" /> <!-- generals styles -->
+    <link rel="stylesheet" href="/stylesheets/map.css"> <!-- Map styles -->
+
   </head>
+
   <body>
 
     <!--Nav bar Bootstrap-->
@@ -26,10 +27,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/acercade">Acerca de nosotros</a>
+        <a class="nav-link" href="/aboutUs">Acerca de nosotros</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/branch">Sucursales</a>
@@ -49,11 +50,9 @@
   </div>
 </nav>
 
-
-
     {{{body}}}
 
-<!-- Footer #244C5A-->
+<!-- Footer -->
 
 <footer class="text-center text-white" style="background-color: #76232F">
   <!-- Grid container -->
@@ -177,10 +176,11 @@
   <!-- Copyright -->
 </footer>
 
-    <!--scripts-->
+    <!-- scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="/js/map.js"></script>
     <script src="/js/script.js"></script>
   </body>
 
