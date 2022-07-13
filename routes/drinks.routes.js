@@ -3,7 +3,7 @@ const Drink = require("../models/Drinks.model")
 const Pastry = require("../models/Pastries.model")
 
 router.get("/drinks", (req, res, next) => {
-  Drink.find()
+  Drink.find().sort({type: 1})
   .then(drinks => {
     res.render("drinks", {drinks});
   })
