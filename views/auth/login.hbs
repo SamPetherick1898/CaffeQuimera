@@ -1,14 +1,25 @@
+<div class="signup-page">
+   <div class="forms signup">
 <form action="/auth/login" method="POST">
-   <label> Username
-      <input type="text" name="username">
-   </label>
-   <label> Password
-      <input type="password" name="password">
-   </label>
-
-   <button type="submit">Submit</button>
+   <h2>Login</h2>
+<div class="row signup-field">
+  <div class="col">
+     <label for="username">Username</label>
+    <input type="text" name="username" class="form-control">
+  </div>
+  <div class="col">
+     <label for="password">Password</label>
+    <input type="password" name="password" class="form-control">
+  </div>
+</div>
+       <button type="submit" class="btn">Submit</button>
 </form>
 
 {{#if errorMessage}}
    {{errorMessage}}
 {{/if}}
+</div>
+<div class="alpaca-container">
+<img class="alpaca-signup" src="https://i.pinimg.com/originals/bf/90/cd/bf90cd4f320c384e0f235abe1af74d53.jpg" alt="happy-alpaca">
+</div>
+</div>

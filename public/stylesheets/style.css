@@ -20,9 +20,15 @@ body {
 h1{
     text-align: center;
     font-family: 'Yanone Kaffeesatz', sans-serif;
-    font-size: 90px;
+    font-size: 80px;
     color: #76232F;
     margin-top: 50px;
+}
+h2{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 60px;
+    color: #76232F;
+
 }
 h5{
     color:var(--black);
@@ -30,18 +36,50 @@ h5{
 }
 /*Carousel style*/
 .carousel-item{
-    height: 80%;
+    max-height: 75vh;
 }
 
-/*Navbar properties*/
+/*------------------Navbar properties-------------------*/
 .navbar{
-    background-color: var(--black);
+    background-color: white;
 }
-
+.nav-item{
+    padding-left: 2em;
+} 
 .navbar a{
-    color: #9FA194;
+    color: var(--black);
+    font-size: 1.2em;
+    border-bottom: 3px solid transparent;
 }
-
+/*.topnav {
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+  }*/
+  
+  .navbar a:hover {
+    border-bottom: 3px solid var(--black);
+  }
+  
+  .navbar a.active {
+    border-bottom: 3px solid var(--black);
+  }
+  .navbar .cart-link:hover {
+    border-bottom: none;
+  }
+.dropdown-menu{
+    border: none;
+}
 .alpaquita{
     height: 35px;
 }
@@ -50,8 +88,9 @@ h5{
     align-items: center;
 }
 .fa-cart-shopping{
-    color: white;
+    color: rgb(8, 8, 8);
 }
+
 /* slogan */
 
 .slogan{
@@ -100,6 +139,21 @@ h5{
     background-color: white;
     margin: 1rem auto;
 }
+.edge-padding{
+    padding: 0;
+}
+.product-edge{
+    margin-bottom: 1em;
+    padding: 2em 1em;
+    /*border: 2px dotted var(--brown);
+    border-radius: 20px;
+    border-top: 2px groove var(--brown);
+    border-bottom: 4px ridge var(--brown);*/
+    min-height: 33em;
+}
+.product-edge img{
+    max-height: 220px;
+}
 /*--------------------------------------------Forms----------------------------------------------*/
 /*---------Signup page form-----------*/
 .signup-page{
@@ -108,9 +162,13 @@ h5{
     display: flex;
 }
 .signup {
-    margin-top: 5rem;
+    margin-top: 2rem;
     margin-bottom: 2rem;
     width: 38rem;
+}
+.signup-field{
+    margin-bottom:2rem;
+    margin-top:3rem;
 }
 .signup input{
     width: 15rem;
@@ -120,7 +178,7 @@ h5{
     justify-content: flex-end;
 }
 .alpaca-signup{
-    margin-top:  3rem;
+    margin-top:  0.1rem;
     border-radius: 50% 80%;
     width: 80%;
     border: 3px double;
@@ -133,10 +191,20 @@ h5{
     background-color: white;
     margin-top: 2rem;
 }
+
+/* CSS */
+
 .btn{
     background-color: var(--orange);
     color: white;
     font-weight: 600;
+    transition: 0.3s;
+    transition: all 250ms;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.btn:hover {
+    transform: scale(1.05) rotate(-1deg);
 }
 /*--------New product form----------*/
 .form-newproduct{
@@ -150,6 +218,8 @@ h5{
     display: flex;
     text-align: justify;
     flex-wrap: wrap;
+    padding: 0 3rem;
+
 }
 
 .form-control{
