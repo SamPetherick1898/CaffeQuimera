@@ -1,8 +1,8 @@
 /* City map: Uruapan, Michoacan, Mexico */
 
 #map1{
-    width: 450px;
-    height: 350px;
+    width: 550px;
+    height: 450px;
 }
 
 .map-container1{
@@ -12,11 +12,43 @@
     margin-top: 10%;
 }
 
+.marker1{
+    background-image: url(/images/alpaquita.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.marker2{
+    background-image: url(/images/alpaquita.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.marker3{
+    background-image: url(/images/alpaquita.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.titleBranch{
+    font-size: 50px;
+}
+
+.descriptionText{
+    margin: 10%;
+}
+
 /* City map: Berlin, Germany */
 
 #map2{
-    width: 450px;
-    height: 350px;
+    width: 550px;
+    height: 450px;
 }
 
 .map-container2{
@@ -29,8 +61,8 @@
 /* City map: Tokio, Japan */
 
 #map3{
-    width: 450px;
-    height: 350px;
+    width: 550px;
+    height: 450px;
 }
 
 .map-container3{
@@ -38,4 +70,10 @@
     justify-content: center;
     margin-bottom: 10%;
     margin-top: 10%;
+}
+
+.petCard{
+    display: flex;
+    justify-content: center;
+    text-align: justify;
 }
