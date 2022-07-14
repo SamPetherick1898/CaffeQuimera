@@ -18,6 +18,7 @@ body {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
 }
+
 h1{
     text-align: center;
     font-family: 'Yanone Kaffeesatz', sans-serif;
@@ -263,12 +264,12 @@ h5{
 .drink-card img{
     max-width: 10rem;
 }
-.select-cant {
+.select-quantity {
     display: flex;
     flex-direction: column;
     padding-top: 2rem;
 }
-.cant{
+.quantity{
     max-width:5rem;
     margin-bottom: 1rem;
 }
@@ -285,8 +286,9 @@ h5{
  input[type="radio"] {
 	accent-color: var(--orange);
 }
-.addons{
+.addons, .subtotal{
     color: var(--orange);
+    font-weight: 600;
 }
 /*Range slider formatting*/
 input[type=range] {

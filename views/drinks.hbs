@@ -11,11 +11,15 @@
                         <p class="card-text">{{description}}</p>
                         <span class="badge text-bg-warning">Precio: ${{price}}</span>
 
+<h2>{{admin}}</h2>
                     </div>
-
                         <button onclick="addToCart(`{{_id}}`)" class="btn d-grid gap-2"> Agregar <i class="fa-solid fa-cart-shopping"></i></button>
-
+                        <a href="/personalize/{{_id}}"><button class="btn d-grid gap-2">Personalizar</button></a>
+                        {{#if admin}}
+                        <a href="/drinks/{{_id}}"><button class="btn d-grid gap-2">Editar</button></a>
+                        {{/if}}
             </div>
         </div>
      {{/each}}
+<!--<h2>{{admin}}</h2>-->
   </div>
