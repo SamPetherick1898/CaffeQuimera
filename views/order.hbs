@@ -19,7 +19,7 @@
         <div class="col select-cant">
             <label for="customRange1" class="form-label">Cantidad</label>
             <input class="cant" type="number" value="0" min="0" max="5" name="cantidad"/>
-            <div class="price"><p>Precio: ${{price}}</p></div>
+            <div class="price"><p>Precio: $<span>{{price}}</span></p></div>
         </div>
         
         <!-- cheboxes to choose types-->
@@ -89,7 +89,7 @@
     </div>
     {{/each}}
     <div class="total">
-        <h2>Total: $0.00</h2> 
+        <h2>Total: $0.00</h2>
     </div>
         <button class="btn" type="submit">Enviar Orden</button>
         
@@ -102,3 +102,23 @@
 </div>
 
 
+<script>
+  function updateSubtotal(product) {
+  //alert('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+  let subtotal = price.innerHTML * quantity.value;
+  product.querySelector('.subtotal span').innerHTML = subtotal;
+  return subtotal;
+  //... your code goes here
+}
+function calculateAll() {
+  let total = 0;
+  const products = document.getElementsByClassName('border');
+  for (let i = 0; i < products.length; i++) {
+
+    total += updateSubtotal(products[i]);
+  }
+  document.querySelector('.total h2').innerHTML = `Total: ${total}`;
+}
+</script>
