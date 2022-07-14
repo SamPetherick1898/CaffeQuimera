@@ -78,6 +78,20 @@ let marker3 = new mapboxgl.Marker(element3)
 })
 .addTo(map3)
 
+//Map search bar
+
+map1.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
+map2.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
+map3.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
 //Maps controls and navigation
 
 map1.addControl(new mapboxgl.NavigationControl());
@@ -88,6 +102,29 @@ map2.addControl(new mapboxgl.FullscreenControl());
 
 map3.addControl(new mapboxgl.NavigationControl());
 map3.addControl(new mapboxgl.FullscreenControl());
+
+//User localitation
+
+map1.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}));
+
+map2.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}));
+
+map3.addControl(new mapboxgl.GeolocateControl({
+    positionOptions: {
+        enableHighAccuracy: true
+    },
+    trackUserLocation: true
+}));
 
 //CC maps
 
