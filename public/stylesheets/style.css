@@ -3,6 +3,7 @@
     --gray: #C7C9C6;
     --green: #9FA194;
     --brown: #582719;
+    --red: #76232F;
     --black: #15100A;
   }
 
@@ -21,13 +22,13 @@ h1{
     text-align: center;
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 80px;
-    color: #76232F;
+    color: var(--red);
     margin-top: 50px;
 }
 h3{
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 60px;
-    color: #76232F;
+    color: var(--red);
 
 }
 h5{
@@ -42,6 +43,7 @@ h5{
 /*------------------Navbar properties-------------------*/
 .navbar{
     background-color: white;
+    padding-right: 3rem;
 }
 .nav-item{
     padding-left: 2em;
@@ -50,10 +52,12 @@ h5{
     color: var(--black);
     font-size: 1.2em;
     border-bottom: 3px solid transparent;
+    transition:0.5s;
 }
 
 .navbar a:hover {
   border-bottom: 3px solid var(--black);
+  transform:scale(1.2);
 }
 
 .navbar a.active {
@@ -67,6 +71,10 @@ h5{
 }
 .alpaquita{
     height: 35px;
+}
+.btn-cart{
+    background: none;
+    border: none;
 }
 .cart {
     display:flex;
@@ -136,13 +144,21 @@ h5{
     border-bottom: 4px ridge var(--brown);*/
     min-height: 33em;
 }
+.product-edge p{
+    font-size: 1rem;
+}
 .product-edge img{
-    max-height: 220px;
+    max-height: 180px;
+    max-width: 230px;
+}
+.product-edge i{
+    padding-left: 0.5rem;
+    color: white;
 }
 /*--------------------------------------------Forms----------------------------------------------*/
 /*---------Signup page form-----------*/
 .signup-page{
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
     padding-left: 5rem;
     display: flex;
 }
@@ -166,7 +182,7 @@ h5{
     margin-top:  0.1rem;
     border-radius: 50% 80%;
     width: 80%;
-    border: 3px double;
+    border: 3px double var(--red);;
 }
 /*--------Forms general-----------*/
 .form-edge {
@@ -220,30 +236,58 @@ h5{
 }
 
 /*----------------Order drinks form------------------*/
+.title-order{
+    margin-bottom: 0;
+}
+.form-order-drink{
+    padding-top: 2rem;
+}
 .order-drink {
-    border: 1px solid var(--black);
+    /*border: 1px solid var(--black);*/
+    background:none;
+    border: none;
     border-radius: 20px;
-    background-color: white;
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 1rem;
 }
+.border{
+    border:none !important;
+    border-bottom: 1px groove var(--black) !important;
 
+}
 .drink-card{
-    border: 1px solid var(--black);
-    border-radius:20px;
+    min-width: 15rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+.drink-card img{
+    max-width: 10rem;
 }
 .select-cant {
     display: flex;
     flex-direction: column;
+    padding-top: 2rem;
 }
- /*Radios style*/
+.cant{
+    max-width:5rem;
+    margin-bottom: 1rem;
+}
+.price{
+    font-weight: 600;
+}
+.total{
+    margin-bottom: 1rem;
+}
+ /*----Radios style----*/
  .radios {
     margin-left: 1rem;
 }
  input[type="radio"] {
 	accent-color: var(--orange);
 }
-
+.addons{
+    color: var(--orange);
+}
 /*Range slider formatting*/
 input[type=range] {
     height: 39px;

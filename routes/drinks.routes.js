@@ -37,8 +37,15 @@ router.post("/new-product", (req, res) => {
 })
 
 //Route to order
-  router.get("/order", (req, res, next) => {
-    res.render("order");
-  });
+  router.post("/orders", async (req, res) => {
+    console.log(req.body)
+    const drinks = JSON.parse(req.body.drinks)
 
+    //Find drink by ID and send to order
+    const orders = await Drink.find({ '_id': { $in: drinks } })
+    
+        console.log(orders)
+        res.render("order", {orders})
+
+})
   module.exports = router

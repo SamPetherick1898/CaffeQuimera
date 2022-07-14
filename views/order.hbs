@@ -1,26 +1,27 @@
 
 <div class="container">
 <div class="form-order-drink">
+  <h3 class="card-title title-order">Registra tu orden</h3>
   <div class="card order-drink">
   <div class="card-body">
-    <h5 class="card-title">Registra tu orden</h5>
 
-<!--POST, para que los datos vayan en el (body) del request-->
+<!--POST, to send data to the request body-->
 <form action="/order" method="post">
-    <div class="row my-3">
+{{#each orders}}
+    <div class="row my-3 border">
+    
         <div class="col drink-card">
-            <h2>Bebida</h2>
-            <p>Precio:</p>
+            <h4>{{name}}</h4>
+            <img src={{url}} class="card-img-top max-img" alt="...">
+            
         </div>
-
+     
         <div class="col select-cant">
             <label for="customRange1" class="form-label">Cantidad</label>
-            <span class="input-group-text">Cantidad</span>
-            <input type="range" class="form-range" min="0" max="10" id="customRange2" name="cantidad" value="0">
+            <input class="cant" type="number" value="0" min="0" max="5" name="cantidad"/>
+            <div class="price"><p>Precio: ${{price}}</p></div>
         </div>
-
-
-
+        
         <!-- cheboxes to choose types-->
         <div class="col radios">
             <h5>Tipo de leche:</h5>
@@ -81,16 +82,23 @@
                     Crema Irlandesa
                 </label>
             </div>
+            <div class="addons"><p>Adicionales: $5.00</p></div>
         </div>
         <!-- end of checkboxes-->
+    
     </div>
+    {{/each}}
     <div class="total">
         <h2>Total: $0.00</h2> 
     </div>
         <button class="btn" type="submit">Enviar Orden</button>
+        
     </form>
+    
   </div>
 </div>
 </div>
 
 </div>
+
+
