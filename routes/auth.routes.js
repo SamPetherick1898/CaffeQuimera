@@ -113,6 +113,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   // Search the database for a user with the username submitted in the form
   User.findOne({ username })
     .then((user) => {
+      console.log("Role: ", user.role)
       // If the user isn't found, send the message that user provided wrong credentials
       if (!user) {
         return res.status(400).render("auth/login", {

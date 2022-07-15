@@ -6,8 +6,8 @@
   <div class="card-body">
 
 <!--POST, to send data to the request body-->
-<form action="/order" method="post">
-{{#each orders}}
+<form action="/send-orders" method="post">
+{{#each products}}
     <div class="row my-3 border">
     
         <div class="col drink-card">
@@ -16,76 +16,17 @@
             
         </div>
      
-        <div class="col select-cant">
+        <div class="col select-quantity">
             <label for="customRange1" class="form-label">Cantidad</label>
-            <input class="cant" type="number" value="0" min="0" max="5" name="cantidad"/>
+            <input class="quantity" id="quantity" type="number" value="1" min="0" max="5" name="cantidad" onchange="calculateAll()"/>
             <div class="price"><p>Precio: $<span>{{price}}</span></p></div>
+            <div class="subtotal"><p>Subtotal: $<span>20</span></p></div>
         </div>
-        
-        <!-- cheboxes to choose types-->
-        <div class="col radios">
-            <h5>Tipo de leche:</h5>
-            <br>
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
-                <span class="checkmark"></span>
-              <label class="form-check-label" for="flexRadioDefault">
-                Almendras
-              </label>
-            </div>
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
-                <span class="checkmark"></span>
-              <label class="form-check-label" for="flexRadioDefault">
-                Soya
-              </label>
-            </div>
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
-                <span class="checkmark"></span>
-              <label class="form-check-label" for="flexRadioDefault">
-                Avena
-              </label>
-            </div>
-            <div class="form-check mb-2">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault">
-                <span class="checkmark"></span>
-              <label class="form-check-label" for="flexRadioDefault">
-                Coco
-              </label>
-            </div>
-        </div>
-        <div class="col checkboxes">
-            <h5>Jarabe:</h5>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="agua" name="agua">
-                <label class="form-check-label" for="agua">
-                    Maple
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="alcohol" name="alcohol">
-                <label class="form-check-label" for="alcohol">
-                    Vainilla
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="azucar" name="azucar">
-                <label class="form-check-label" for="azucar">
-                    Amaretto
-                </label>
-            </div>
-            <div class="form-check mb-4">
-                <input class="form-check-input" type="checkbox" value="" id="cebada" name="cebada">
-                <label class="form-check-label" for="cebada">
-                    Crema Irlandesa
-                </label>
-            </div>
-            <div class="addons"><p>Adicionales: $5.00</p></div>
-        </div>
-        <!-- end of checkboxes-->
-    
+
+          <form action="/orders" method="post">
+            <input type="text" name="orders" id="orders" hidden>
+            <span onclick="deleteProduct(`{{_id}}`)" class="delete">Delete</span>
+          </form>
     </div>
     {{/each}}
     <div class="total">
@@ -104,21 +45,23 @@
 
 <script>
   function updateSubtotal(product) {
-  //alert('Calculating subtotal, yey!');
-  const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input');
-  let subtotal = price.innerHTML * quantity.value;
-  product.querySelector('.subtotal span').innerHTML = subtotal;
-  return subtotal;
-  //... your code goes here
-}
-function calculateAll() {
-  let total = 0;
-  const products = document.getElementsByClassName('border');
-  for (let i = 0; i < products.length; i++) {
-
-    total += updateSubtotal(products[i]);
+    const price = product.querySelector('.price span');
+    const quantity = product.querySelector('.quantity');
+    let subtotal = price.innerHTML * quantity.value;
+    product.querySelector('.subtotal span').innerHTML = subtotal;
+    return subtotal;
   }
-  document.querySelector('.total h2').innerHTML = `Total: ${total}`;
-}
+
+  function calculateAll() {
+    let total = 0;
+    const products = document.getElementsByClassName('border');
+    for (let i = 0; i < products.length; i++) {
+
+      total += updateSubtotal(products[i]);
+    }
+    document.querySelector('.total h2').innerHTML = `Total: $${total}.00`;
+  }
+
+  calculateAll()
+
 </script>

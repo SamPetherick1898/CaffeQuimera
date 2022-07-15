@@ -12,9 +12,10 @@
                         <span class="badge text-bg-warning">Precio: ${{price}}</span>
 
                     </div>
-
                         <button onclick="addToCart(`{{_id}}`)" class="btn d-grid gap-2"> Agregar <i class="fa-solid fa-cart-shopping"></i></button>
-
+                        {{#if ../admin}}                      
+                        <a href="/drinks/{{_id}}"><button class="btn d-grid gap-2">Editar</button></a>
+                        {{/if}}
             </div>
         </div>
      {{/each}}
