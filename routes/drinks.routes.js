@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { findById } = require("../models/Drinks.model");
 const Drink = require("../models/Drinks.model")
 const Pastry = require("../models/Pastries.model")
 const isAdmin = require("../middleware/isAdmin");
