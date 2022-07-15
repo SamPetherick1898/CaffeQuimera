@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { findById } = require("../models/Drinks.model");
 const Drink = require("../models/Drinks.model")
 const Pastry = require("../models/Pastries.model")
 
@@ -13,6 +14,21 @@ router.get("/drinks", (req, res, next) => {
 router.get("/new-product", (req, res, next) => {
     res.render("newproduct");
   });
+
+
+  router.get("/delete/:id", async (req, res, next) =>{
+    try{
+      const { id } = req.params
+      if(await Drink.findById(id)){
+      await Drink.findByIdAndRemove(id)
+      res.redirect("/drinks")} 
+      else if(await Pastry.findById(id)){
+        await Pastry.findByIdAndRemove(id)
+        res.redirect("/pastries")
+      }
+    } catch { console.log }
+  })
+
 
 //Middleware helper to select drink type
 
@@ -34,6 +50,32 @@ router.post("/new-product", (req, res) => {
           res.redirect("/drinks")
         }).catch(console.log("Error creating new drink"))
     }
+})
+
+//Edit
+router.get("/edit/:id", async (req, res, next) =>{
+  const details = await Drink.findById(req.params.id)
+  const details2 = await Pastry.findById(req.params.id)
+  let oc
+  if(details){
+    oc = { ...details._doc}
+  } else if (details2){
+    oc = { ...details2._doc}
+  }
+  res.render("id", oc)
+})
+
+router.post("/update/:id", async (req, res) =>{
+  const updateD = req.body
+  let type = req.body.type;
+  const paramsId = req.params.id
+  if(type === "pastel" || type === "nieve"){
+    await Pastry.findByIdAndUpdate(paramsId, updateD)
+    res.redirect("/pastries")
+  } else{
+    await Drink.findByIdAndUpdate(paramsId, updateD)
+    res.redirect("/drinks")
+  }
 })
 
 //Route to order
