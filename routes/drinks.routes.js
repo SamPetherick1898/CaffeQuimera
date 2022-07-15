@@ -17,9 +17,13 @@ router.get("/drinks", (req, res, next) => {
 });
 
 router.get("/pastries", (req, res, next) => {
+  let admin = false
+  if(req.session?.user?.role === "admin"){
+    admin = true
+  }
   Pastry.find()
   .then(pastries => {
-    res.render("pastries", {pastries});
+    res.render("pastries", {pastries, admin});
 })
 
 });
