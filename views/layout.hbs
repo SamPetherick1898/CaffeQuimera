@@ -15,6 +15,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/> <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/><!-- Animate css -->
     <link rel="stylesheet" href="/stylesheets/style.css"/> <!-- generals styles -->
+    <link rel="stylesheet" href="/stylesheets/forms.css"/> <!-- forms styles -->
     <link rel="stylesheet" href="/stylesheets/map.css"> <!-- Map styles -->
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script> <!-- map search bar -->
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' /> <!-- map search bar -->
@@ -26,7 +27,7 @@
     <!--Nav bar Bootstrap-->
 
 <nav class="navbar navbar-expand-lg animate__animated animate__fadeIn animate__slower" style="z-index:1000;">
-  <img class="alpaquita" src="images/alpaquita.png" alt="alpaquita bonita del mal">
+  <img class="alpaquita" src="./images/alpaquita.png" alt="alpaquita bonita del mal">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -45,17 +46,19 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/drinks">Bebidas</a>
           <a class="dropdown-item" href="/pastries">Postres</a>
-          <a class="dropdown-item" href="#">Animalitos y promociones</a>
         </div>
+        {{#if admin}}
       </li>
-            <li class="nav-item">
+        <li class="nav-item new-product-btn">
         <a class="nav-link" href="/new-product">Agregar producto</a>
       </li>
+      {{/if}}
     </ul>
   </div>
     <div class="cart">
-      <a class="nav-link" href="/signup">Signup</a>
-      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/auth/signup">Registro</a>
+      <a class="nav-link" href="/auth/login">Iniciar</a>
+      <a class="nav-link" href="/auth/logout">Salir</a>
     <div class="form">
       <form action="/orders" method="post">
       <input type="text" name="drinks" id="drinks" hidden>

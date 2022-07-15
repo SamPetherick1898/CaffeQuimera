@@ -27,7 +27,7 @@ const index = require("./routes/index.routes");
 app.use("/", index);
 
 const authRoutes = require("./routes/auth.routes");
-app.use("/", authRoutes);
+app.use("/auth", authRoutes);
 
 const branchRoutes = require("./routes/branch.routes")
 app.use("/", branchRoutes)
@@ -35,8 +35,8 @@ app.use("/", branchRoutes)
 const drinksRoutes = require("./routes/drinks.routes");
 app.use("/", drinksRoutes);
 
-const pastriesRoutes = require("./routes/pastries.routes");
-app.use("/", pastriesRoutes);
+const ordersRoutes = require("./routes/orders.routes");
+app.use("/", ordersRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

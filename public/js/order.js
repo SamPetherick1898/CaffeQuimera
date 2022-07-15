@@ -21,7 +21,7 @@ function addToCart(id){
 
 function showProducts(){
     const order = localStorage.getItem("cart");
-    console.log(order)
+    //console.log(order)
     return order
 }
 
@@ -32,3 +32,20 @@ function insertProduct(){
     numItems.innerHTML = JSON.parse(drinksForm.value).length
 }
 insertProduct()
+
+function deleteProduct(id){
+    let key
+    console.log(id)
+    const products = JSON.parse(localStorage.getItem("cart"));
+    const newProducts = products.filter(prod => {
+      return prod !== id
+    })
+    localStorage.setItem("cart", JSON.stringify(newProducts))
+
+    //window.location.href="/orders"
+}
+function updateProducts(){
+    const drinksForm = document.getElementById("orders")
+    drinksForm.value = showProducts()
+}
+

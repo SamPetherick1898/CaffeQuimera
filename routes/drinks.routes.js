@@ -2,35 +2,30 @@ const router = require("express").Router();
 const { findById } = require("../models/Drinks.model");
 const Drink = require("../models/Drinks.model")
 const Pastry = require("../models/Pastries.model")
+const isAdmin = require("../middleware/isAdmin");
 
 router.get("/drinks", (req, res, next) => {
+  let admin = false
+  if(req.session?.user?.role === "admin"){
+    admin = true
+  }
   Drink.find().sort({type: 1})
   .then(drinks => {
-    res.render("drinks", {drinks});
+    res.render("drinks", {drinks, admin});
   })
 
 });
 
-router.get("/new-product", (req, res, next) => {
+router.get("/pastries", (req, res, next) => {
+  Pastry.find()
+  .then(pastries => {
+    res.render("pastries", {pastries});
+})
+
+});
+router.get("/new-product", isAdmin, (req, res, next) => {
     res.render("newproduct");
   });
-
-
-  router.get("/delete/:id", async (req, res, next) =>{
-    try{
-      const { id } = req.params
-      if(await Drink.findById(id)){
-      await Drink.findByIdAndRemove(id)
-      res.redirect("/drinks")} 
-      else if(await Pastry.findById(id)){
-        await Pastry.findByIdAndRemove(id)
-        res.redirect("/pastries")
-      }
-    } catch { console.log }
-  })
-
-
-//Middleware helper to select drink type
 
 router.post("/new-product", (req, res) => {
     console.log(req.body)
@@ -78,16 +73,19 @@ router.post("/update/:id", async (req, res) =>{
   }
 })
 
-//Route to order
-  router.post("/orders", async (req, res) => {
-    console.log(req.body)
-    const drinks = JSON.parse(req.body.drinks)
 
-    //Find drink by ID and send to order
-    const orders = await Drink.find({ '_id': { $in: drinks } })
-    
-        console.log(orders)
-        res.render("order", {orders})
-
+router.get("/delete/:id", async (req, res, next) =>{
+  try{
+    const { id } = req.params
+    if(await Drink.findById(id)){
+    await Drink.findByIdAndRemove(id)
+    res.redirect("/drinks")} 
+    else if(await Pastry.findById(id)){
+      await Pastry.findByIdAndRemove(id)
+      res.redirect("/pastries")
+    }
+  } catch { console.log }
 })
+
+
   module.exports = router
