@@ -1,34 +1,37 @@
+<h1>Editar productos</h1>
+
+
+<!--                    Edit form                    -->
 
 <div class="form-newproduct">
   <div class="card form-edge">
-    <h3 class="card-title">Registrar Nuevo Producto</h3>
   <div class="card-body">
 
 <!--form with post action to send the data-->
-<form action="/new-product" method="post">
+<form action="/update/{{_id}}" method="post">
     <div class="row my-3">
         <div class="col">
-            <input type="text" class="form-control" placeholder="Nombre" name="name" required>
+            <input type="text" class="form-control" placeholder="Nombre" name="name" required value="{{name}}">
         </div>
         <div class="col">
-            <input type="text" class="form-control" placeholder="url" name="url">
+            <input type="text" class="form-control" placeholder="url" name="url" value="{{url}}">
         </div>
     </div>
 
     <div class="row mb-3">
         <div class="col">
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripcion" name="description" required></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descripcion" name="description" required>{{description}}</textarea>
         </div>
     </div>
 
     <div class="row">
         <div class="col select-cant">
             <div class="input-group mb-3 price-field">
-            <span class="input-group-text">$</span>
+            <span class="input-group-text" value="{{price}}">$</span>
             <input type="text" class="form-control" name="price" required>
         </div>
         
-        <select class="form-select mb-3" id="type" name="type" required>
+        <select class="form-select mb-3" id="type" name="type" required value="{{type}}">
             <option>Tipo...</option>
             <option value="cafe">Caliente</option>
             <option value="frappe">Frappe</option>
@@ -40,8 +43,9 @@
         </div>
 
     </div>
-
-        <button class="btn" type="submit">Guardar</button>
+        <div class="buttons-form">
+            <button class="btn" type="submit">Editar</button>
+        </div>
     </form>
   </div>
 </div>

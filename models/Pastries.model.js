@@ -24,10 +24,6 @@ const PastriesSchema = new Schema({
         required: true,
         minLength: 10
     },
-    quantity: {
-        type: Number,
-        min: 0
-    },
     type: {
         type: String,
         enum: ["pastel", "nieve"]
