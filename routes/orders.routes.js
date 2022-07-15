@@ -11,4 +11,22 @@ router.get("/personalize/:id", async (req, res, next) => {
   res.render("personalize", drink);
 });
 
+//Route to order
+router.post("/orders", async (req, res) => {
+  const orders = JSON.parse(req.body.drinks)
+
+  //Find drink by ID and send to order
+  const products = await Drink.find({ '_id': { $in: orders } })
+  const pastries = await Pastry.find({ '_id': { $in: orders } })
+  pastries.forEach(pastry =>{
+    products.push(pastry)
+  })
+      res.render("order", {products})
+
+})
+
+router.post("/send-orders", async (req, res) => {
+res.render("sent")
+
+})
   module.exports = router

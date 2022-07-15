@@ -1,0 +1,187 @@
+/*--------------------------------------------Forms----------------------------------------------*/
+/*---------Signup page form-----------*/
+.signup-page{
+    margin-bottom: 1rem;
+    padding-left: 5rem;
+    display: flex;
+}
+.signup {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 38rem;
+}
+.signup-field{
+    margin-bottom:2rem;
+    margin-top:3rem;
+}
+.signup input{
+    width: 15rem;
+}
+.alpaca-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.alpaca-signup{
+    margin-top:  0.1rem;
+    border-radius: 50% 80%;
+    width: 80%;
+    border: 3px double var(--red);;
+}
+/*--------Forms general-----------*/
+.form-edge {
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    padding: 2rem;
+    background-color: white;
+    margin-top: 2rem;
+}
+
+/* CSS */
+
+.btn{
+    background-color: var(--orange);
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+    transition: all 250ms;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+.btn:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+/*--------New product form----------*/
+.form-newproduct{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color:white;
+  margin-bottom: 1rem;
+}
+.drinks-container{
+    max-width: 100vw;
+    display: flex;
+    text-align: justify;
+    flex-wrap: wrap;
+    padding: 0 3rem;
+
+}
+
+.form-control{
+    border: 1px solid var(--black);
+}
+.price-field{
+    width: 15rem;
+}
+
+.input-group span {
+    background-color: var(--cream);
+}
+
+/*----------------Order drinks form------------------*/
+.title-order{
+    margin-bottom: 0;
+}
+.form-order-drink{
+    padding-top: 2rem;
+}
+.order-drink {
+    /*border: 1px solid var(--black);*/
+    background:none;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+.border{
+    border:none !important;
+    border-bottom: 1px groove var(--black) !important;
+
+}
+.drink-card{
+    min-width: 15rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.drink-card img{
+    max-width: 10rem;
+}
+.select-quantity {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2rem;
+}
+.quantity{
+    max-width:5rem;
+    margin-bottom: 1rem;
+}
+.price{
+    font-weight: 600;
+}
+.total{
+    margin-bottom: 1rem;
+}
+ /*----Radios style----*/
+ .radios {
+    margin-left: 1rem;
+}
+ input[type="radio"] {
+	accent-color: var(--orange);
+}
+.addons, .subtotal{
+    color: var(--orange);
+    font-weight: 600;
+}
+
+/*Types style*/
+select {
+    margin-top: 50px;
+    padding: 10px 15px;
+    border: 1px dashed var(--black);
+    border-radius: 4px;
+    background-color: white;
+ }
+
+ /*Checkboxes styles*/
+ 
+ input[type="checkbox"] { display: none; }
+ 
+ input[type="checkbox"] + label {
+   display: block;
+   position: relative;
+   padding-left: 25px;
+   color: black;
+   cursor: pointer;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+ }
+ 
+ input[type="checkbox"] + label:last-child { margin-bottom: 10; }
+ 
+ input[type="checkbox"] + label:before {
+   content: '';
+   display: block;
+   width: 20px;
+   height: 20px;
+   border: 1px solid var(--orange);
+   position: absolute;
+   left: 0;
+   top: 0;
+   opacity: .6;
+   -webkit-transition: all .12s, border-color .08s;
+   transition: all .12s, border-color .08s;
+   background-color: white;
+ }
+ 
+ input[type="checkbox"]:checked + label:before {
+   width: 10px;
+   top: -5px;
+   left: 5px;
+   border-radius: 0;
+   opacity: 1;
+   border-top-color: transparent;
+   border-left-color: transparent;
+   -webkit-transform: rotate(45deg);
+   transform: rotate(45deg);
+ }

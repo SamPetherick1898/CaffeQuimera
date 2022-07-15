@@ -47,25 +47,4 @@ router.post("/new-product", (req, res) => {
     }
 })
 
-//Route to order
-  router.post("/orders", async (req, res) => {
-    console.log(req.body)
-    const orders = JSON.parse(req.body.drinks)
-
-    //Find drink by ID and send to order
-    const drinks = await Drink.find({ '_id': { $in: orders } })
-    const pastries = await Pastry.find({ '_id': { $in: orders } })
-    
-        console.log(drinks)
-        res.render("order", ({drinks}))
-
-})
-
-router.post("/send-orders", async (req, res) => {
-  console.log("orders", req.body)
-
-res.send("Orden enviada, gracias!")
-
-
-})
   module.exports = router

@@ -7,7 +7,7 @@
 
 <!--POST, to send data to the request body-->
 <form action="/send-orders" method="post">
-{{#each drinks}}
+{{#each products}}
     <div class="row my-3 border">
     
         <div class="col drink-card">
@@ -18,11 +18,15 @@
      
         <div class="col select-quantity">
             <label for="customRange1" class="form-label">Cantidad</label>
-            <input class="quantity" id="quantity" type="number" value="1" min="1" max="5" name="cantidad" onchange="calculateAll()"/>
+            <input class="quantity" id="quantity" type="number" value="1" min="0" max="5" name="cantidad" onchange="calculateAll()"/>
             <div class="price"><p>Precio: $<span>{{price}}</span></p></div>
             <div class="subtotal"><p>Subtotal: $<span>20</span></p></div>
         </div>
-          
+
+          <form action="/orders" method="post">
+            <input type="text" name="orders" id="orders" hidden>
+            <span onclick="deleteProduct(`{{_id}}`)" class="delete">Delete</span>
+          </form>
     </div>
     {{/each}}
     <div class="total">
@@ -59,10 +63,5 @@
   }
 
   calculateAll()
-  //const quantities = document.getElementsByClassName('quantity')
-  //for(let i = 0; i <quantities.length; i++){
-  //  console.log("cantidades", quantities[i])
-  //  quantities[i].addEventListener("change", () => calculateAll())
-  //}
-  
+
 </script>
